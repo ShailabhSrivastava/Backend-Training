@@ -1,16 +1,20 @@
 const express = require('express');
 const underscore = require('underscore')
 const _ = require('lodash')
-// const abc = require('../logger/logger.js')
-// const def = require('../util/helper.js')
-// const ghi = require('../validator/formatter.js')
+const abc = require('../logger/logger.js')
+const def = require('../util/helper.js')
+const ghi = require('../validator/formatter.js')
 const router = express.Router();
 
 router.get('/test-me', function (req, res) {
-    // console.log('My batch is', abc.name)
-    // abc.myWelcome()
-    // def.printDate().printMonth().getBatchInfo()
-    // ghi.LowerCase().UpperCase().Trim()
+    console.log('My batch is', abc.name)
+    abc.myWelcome()
+    def.printDate()
+    def.printMonth()
+    def.getBatchInfo()
+    ghi.LowerCase()
+    ghi.UpperCase()
+    ghi.Trim()
     // const _ = require("lodash");
     let arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     console.log(_.chunk(arr, 3));
