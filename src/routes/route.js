@@ -35,4 +35,72 @@ router.get('/student-details/:name', function(req, res){
     res.send('Dummy response')
 })
 
+    let movies = ['Rang de basanti', 'The shining', 'Lord of the rings', 'Batman begins']
+    
+    
+    router.get('/movies', function (req, res){
+    res.send(movies)
+   })
+
+   
+   router.get('/movies/:index', function(req, res){
+   const index=req.params.index
+   res.send(movies[index]) 
+  })
+
+
+
+   router.get('/movies/:indexNumber' , function(req,res){
+    let displayMovie
+    if(req.params.indexNumber < movies.length){
+        displayMovie = movies[req.params.indexNumber]
+    }else{
+        displayMovie = "use a valid index number"
+    }
+    res.send(displayMovie)
+})
+
+
+   router.get('/films', function(req,res){
+    const films =  [ {
+        'id': 1,
+        'name': 'The Shining'
+       }, {
+        'id': 2,
+        'name': 'Incendies'
+       }, {
+        'id': 3,
+        'name': 'Rang de Basanti'
+       }, {
+        'id': 4,
+        'name': 'Finding Nemo'
+       } ]
+      res.send(films)      
+  })
+
+
+  
+   router.get('/get-/films/:indexNumber',function(req, res){
+    let movieName = [{
+        'id': 1,
+        'name': 'The Shining'
+       }, {
+        'id': 2,
+        'name': 'Incendies'
+       }, {
+        'id': 3,
+        'name': 'Rang de Basanti'
+       }, {
+        'id': 4,
+        'name': 'Finding Nemo'
+       }
+       ] 
+       let index = req.params.indexNumber;
+       if(index>movieName.length){
+        return res.send('movie length is greater')
+       } else {
+        res.send(movieName[index])
+       }
+  })
+
 module.exports = router;
