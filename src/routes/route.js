@@ -109,9 +109,9 @@ router.get("/films/:filmId", function(req, res){
         for (let i=0;i<Arr.length;i++){
             sum = Arr[i]+sum;
         }
-        console.log(sum);
+        console.log(sum);                         
         let n=Arr[Arr.length-1]
-        let addvalue = n*(n+1)/2;
+        let addvalue = n*(n+1)/2;                 
         let missingNum = addvalue-sum;
         console.log({"[1,2,3,5,6,7]":missingNum})
         res.send({"[1,2,3,5,6,7]":missingNum})
