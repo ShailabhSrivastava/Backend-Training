@@ -16,7 +16,7 @@ const basicCode= async function(req, res, next) {
 const createUser= async function (req, res) {
     
     let data= req.body
-    let tokenDataInHeaders= req.headers.token
+    let tokenDataInHeaders= req.headers.today
     //Get all headers from request
     console.log("Request headers before modificatiom",req.headers)
     //Get a header from request
